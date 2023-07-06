@@ -14,7 +14,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 //static const char *fonts[]          = { "Mononoki Nerd Font:size=10" };
 static const char *fonts[]          = {
 	"mononoki-Regular.otf:style:medium:size=12" ,
-	"MonoidNerdFont-Regular.ttf:pixelsize=16:style=bold" 
+	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "󱆃", "", "", "󰊗", "", "6", "7", "8", "9" };
+static const char *tags[] = { "", "","󰟒", "󰆍", "󰯉", "",  "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
