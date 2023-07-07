@@ -1,4 +1,5 @@
-static const char black[]       = "#1a1b26";
+static const char black[]       = "#1a1b26"; //Editor Background (Night)
+static const char black2[]      = "#24283b"; //Editor Background (Storm)
 static const char white[]       = "#a9b1d6";
 static const char gray2[]       = "#24283b"; // unfocused window border
 static const char gray3[]       = "#414868";
