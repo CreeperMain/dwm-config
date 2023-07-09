@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { white, black2,  white  },
 	[SchemeHid]  = { gray3,  black, red  },
 	[SchemeStatus]  = { white, black,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { white, black,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { white, black2,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { gray3, black,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]  = { white, black,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { white, black,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
@@ -35,6 +35,12 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "", "","󰟒", "󰆍", "󰯉", "" };
+
+static const unsigned int ulinepad	= 1;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
+static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+
 
 static const Rule rules[] = {
 	/* xprop(1):
