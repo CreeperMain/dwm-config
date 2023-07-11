@@ -12,7 +12,7 @@ cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
 
   printf "^c$black^^b$red^ CPU"
-  printf "^c$white^ ^b$black2^ $cpu_val GHz"
+  printf "^c$white^ ^b$black2^ $cpu_val"
 }
 
 pkg_updates() {
@@ -34,13 +34,13 @@ battery() {
    printf "^b$black^ ^c$dggreen^ 󰁹 $get_capacity"
   elif [ $get_capacity -le 90 ] && [ $get_capacity -ge 80 ]
    then
-   printf "^b$black^ ^c$green^ 󰂂 $get_capacity"
+   printf "^b$black^ ^c$gaqua^ 󰂂 $get_capacity"
   elif [ $get_capacity -le 80 ] && [ $get_capacity -ge 70 ]
    then
-   printf "^b$black^ ^c$lggreen^ 󰂁 $get_capacity"
+   printf "^b$black^ ^c$green^ 󰂁 $get_capacity"
   elif [ $get_capacity -le 70 ] && [ $get_capacity -ge 60 ]
    then
-   printf "^b$black^ ^c$gaqua^ 󰂀 $get_capacity"
+   printf "^b$black^ ^c$lggreen^ 󰂀 $get_capacity"
   elif [ $get_capacity -le 60 ] && [ $get_capacity -ge 50 ]
    then
    printf "^b$black^ ^c$yellow^ 󰁿 $get_capacity"
@@ -94,5 +94,5 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(cpu)$(mem) $(swap) $(battery)% $(brightness) $(wlan)$(clock)"
+  sleep 1 && xsetroot -name "$(cpu)GHz$(mem) $(swap) $(battery)% $(brightness) $(wlan)$(clock)"
 done
