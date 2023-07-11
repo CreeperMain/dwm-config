@@ -29,36 +29,36 @@ pkg_updates() {
 #add => cuz it messes up round numbers and look into gruvbox colors
 battery() {
   get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
-  if [ $get_capacity -lt 100 ] && [ $get_capacity -gt 90 ]
+  if [ $get_capacity -le 100 ] && [ $get_capacity -ge 90 ]
    then
-   printf "^b$black^ ^c$green^ 󰁹 $get_capacity"
-  elif [ $get_capacity -lt 90 ] && [ $get_capacity -gt 80 ]
+   printf "^b$black^ ^c$dggreen^ 󰁹 $get_capacity"
+  elif [ $get_capacity -le 90 ] && [ $get_capacity -ge 80 ]
    then
    printf "^b$black^ ^c$green^ 󰂂 $get_capacity"
-  elif [ $get_capacity -lt 80 ] && [ $get_capacity -gt 70 ]
+  elif [ $get_capacity -le 80 ] && [ $get_capacity -ge 70 ]
    then
-   printf "^b$black^ ^c$lgreen^ 󰂁 $get_capacity"
-  elif [ $get_capacity -lt 70 ] && [ $get_capacity -gt 60 ]
+   printf "^b$black^ ^c$lggreen^ 󰂁 $get_capacity"
+  elif [ $get_capacity -le 70 ] && [ $get_capacity -ge 60 ]
    then
-   printf "^b$black^ ^c$lgreen^ 󰂀 $get_capacity"
-  elif [ $get_capacity -lt 60 ] && [ $get_capacity -gt 50 ]
+   printf "^b$black^ ^c$gaqua^ 󰂀 $get_capacity"
+  elif [ $get_capacity -le 60 ] && [ $get_capacity -ge 50 ]
    then
    printf "^b$black^ ^c$yellow^ 󰁿 $get_capacity"
-  elif [ $get_capacity -lt 50 ] && [ $get_capacity -gt 40 ]
+  elif [ $get_capacity -le 50 ] && [ $get_capacity -ge 40 ]
    then
-   printf "^b$black^ ^c$lyellow^ 󰁾 $get_capacity"
-  elif [ $get_capacity -lt 40 ] && [ $get_capacity -gt 30 ]
+   printf "^b$black^ ^c$gyellow^ 󰁾 $get_capacity"
+  elif [ $get_capacity -le 40 ] && [ $get_capacity -ge 30 ]
    then
-   printf "^b$black^ ^c$orange^ 󰁽 $get_capacity"
-  elif [ $get_capacity -lt 30 ] && [ $get_capacity -gt 20 ]
+   printf "^b$black^ ^c$lgorange^ 󰁽 $get_capacity"
+  elif [ $get_capacity -le 30 ] && [ $get_capacity -ge 20 ]
    then
-   printf "^b$black^ ^c$lorange^ 󰁼 $get_capacity"
-  elif [ $get_capacity -lt 20 ] && [ $get_capacity -gt 10 ]
+   printf "^b$black^ ^c$dgorange^ 󰁼 $get_capacity"
+  elif [ $get_capacity -le 20 ] && [ $get_capacity -ge 10 ]
    then
    printf "^b$black^ ^c$red^ 󰁻 $get_capacity"
-  elif [ $get_capacity -lt 10 ]
+  elif [ $get_capacity -le 10 ]
    then
-   printf "^b$black^ ^c$lred^ 󰁺 $get_capacity"
+   printf "^b$black^ ^c$gred^ 󰁺 $get_capacity"
 fi
 }
 
