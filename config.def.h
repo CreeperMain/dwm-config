@@ -80,12 +80,12 @@ static const char *termcmd[]  = { "st", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("kitty") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("steam") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("librewolf") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("vscodium") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,                       XK_x,      spawn,          SHCMD("xset dpms force off") },
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("sleep 1 && xset dpms force off") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("virt-viewer --connect qemu:///system") },
 //	{ MODKEY|ControlMask,           XK_e,      spawn,          SHCMD("setxkbmap us") },
 	{ MODKEY|ControlMask,           XK_0,      spawn,          SHCMD("setxkbmap us") },
@@ -116,6 +116,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ControlMask,        	XK_f,      togglefullscr,  {0} }, //chagne all layouts to use control
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
