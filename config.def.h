@@ -94,6 +94,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("setxkbmap ru phonetic") },
 	{ MODKEY|ControlMask,           XK_d,      spawn,          SHCMD("setxkbmap de") },
 	{ MODKEY|ControlMask,           XK_g,      spawn,          SHCMD("setxkbmap gr") },
+	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("setxkbmap hr") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
