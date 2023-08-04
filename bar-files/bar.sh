@@ -8,13 +8,6 @@ interval=0
 # load colors
 . ~/.config/dwm-config/bar-files/tokyonight 
 
-cpu() {
-  cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
-
-  printf "^c$black^^b$red^ CPU"
-  printf "^c$white^ ^b$black2^ $cpu_val"
-}
-
 pkg_updates() {
   #updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
   updates=$({ timeout 20 checkupdates 2>/dev/null || true; } | wc -l) # arch
@@ -62,31 +55,33 @@ battery() {
 fi
 }
 
-brightness() {
-  printf "^c$yellow^ "
-  printf "^b$black^ ^c$yellow^%.0f\n" $(cat /sys/class/backlight/*/brightness)
-}
-
-mem() {
-  printf "^c$black^ ^b$green^ MEM"
-  printf "^c$white^ ^b$black2^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
-}
-
-swap() {
-  printf "^b$blue^^c$black^ SWAP"
-  printf "^c$white^ ^b$black2^ $(free -h | awk '/^Swap/ { print $3 }' | sed s/i//g)"
-}
-
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf "^c$terminalb^ ^b$blue^ 󰤨 ^d^%s" "^c$blue^^b$terminalb^ Connected" ;;
-	down) printf "^c$terminalb^ ^b$red^ 󰤭 ^d^%s" "^c$red^^b$terminalb^ Disconnected" ;;
+	up) printf "^c$terminalb^^b$blue^ 󰖩 ^d^%s" "^c$blue^^b$terminalb^ Connected " ;;
+	down) printf "^c$terminalb^^b$red^ 󰖪 ^d^%s" "^c$red^^b$terminalb^ Disconnected " ;;
 	esac
 }
 #like wlan but make a module for charging and make it only show when smth is charging
 clock() {
-	printf "^c$black^ ^b$darkblue^ 󱑆"
-	printf "^c$black^^b$blue^ $(date '+%H:%M  ')  "
+	printf "^c$black^^b$darkblue^ 󱑆"
+	printf "^c$black^^b$blue^ $(date '+%H:%M')"
+	printf "^c$black^^b$darkblue^ 󰨲"
+	printf "^c$black^^b$blue^ $(date "+%A, %B %d %Y")"
+	printf "     "
+}
+
+audio() {
+	printf "^c$yellow^ 󰋋"
+	printf "^c$yellow^ $(amixer sget Master | awk -F"[][]" '/Left:/ { print $2 }')"
+}
+
+charge() {
+get_charge="$(cat /sys/class/power_supply/BAT1/status)"
+ if [ "$get_charge" = Charging ]
+ then
+	 printf "^c$terminalb^^b$green^  " 
+   printf "^c$green^^b$terminalb^ Charging "
+fi
 }
 
 while true; do
@@ -94,5 +89,5 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(cpu)GHz$(mem) $(swap) $(battery)% $(brightness) $(wlan)$(clock)"
+  sleep 1 && xsetroot -name "$(battery)% $(audio)% $(wlan)$(charge)$(clock)"
 done

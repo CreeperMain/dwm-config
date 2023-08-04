@@ -15,11 +15,6 @@ static const char *fonts[]          = {
 	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
 #include "tokyonight.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -74,7 +69,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", red, "-nf", red, "-sb", red, "-sf", red, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
@@ -87,7 +82,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("sleep 1 && xset dpms force off") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("virt-viewer --connect qemu:///system") },
-//	{ MODKEY|ControlMask,           XK_e,      spawn,          SHCMD("setxkbmap us") },
+//	{ MODKEY|ControlMask,           XK_e,      spawn,          SHCMD("setxkbmap us") }, //najdi nachin da rabotit so kirlichno e
 	{ MODKEY|ControlMask,           XK_0,      spawn,          SHCMD("setxkbmap us") },
 	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("setxkbmap mk") },
 	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("setxkbmap rs") },
@@ -100,7 +95,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      inplacerotate,  {.i = +1} },
+	{ MODKEY|ShiftMask,             XK_j,      inplacerotate,  {.i = +1} }, // all 3 with jk do the same thing
 	{ MODKEY|ShiftMask,             XK_k,      inplacerotate,  {.i = -1} },
 	{ MODKEY|ShiftMask,             XK_h,      inplacerotate,  {.i = +2} },
 	{ MODKEY|ShiftMask,             XK_l,      inplacerotate,  {.i = -2} },
@@ -140,6 +135,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
+// winkey + <key> -- exceute command
+// winkey + shift + <key> -- launch program
+// winkey + control + <key> -- choose a keyboard layout
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
