@@ -14,7 +14,6 @@ static const char *fonts[]          = {
 	"mononoki-Regular.otf:style:medium:size=12" ,
 	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
-static const char dmenufont[]       = "monospace:size=10";
 #include "tokyonight.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -69,7 +68,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", red, "-nf", red, "-sb", red, "-sf", red, NULL };
+static const char dmenufont[] = "mononoki-Regular.otf:style:medium:size=12";
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", black2, "-sf", white, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
