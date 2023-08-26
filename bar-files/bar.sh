@@ -65,8 +65,8 @@ wlan() {
 clock() {
 	printf "^c$black^^b$darkblue^ 󱑆"
 	printf "^c$black^^b$blue^ $(date '+%H:%M')"
-	printf "^c$black^^b$green^ 󰨲"
-	printf "^c$black^^b$green^ $(date "+%A, %d/%m/%Y")"
+	printf "^c$black^^b$blue^ 󰨲"
+	printf "^c$black^^b$blue^ $(date "+%d/%m/%Y")"
 	printf "     "
 }
 
@@ -84,10 +84,15 @@ get_charge="$(cat /sys/class/power_supply/BAT1/status)"
 fi
 }
 
+kblayout() {
+	printf "^c$terminalb^^b$orange^ 󰌌 "
+	printf "^c$orange^^b$terminalb^ $(setxkbmap -query | awk '/layout:/ {print $2}') "
+}
+
 while true; do
 
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(battery)% $(audio)% $(wlan)$(charge)$(clock)"
+  sleep 1 && xsetroot -name "$(battery)% $(audio)% $(wlan)$(charge)$(kblayout)$(clock)"
 done
