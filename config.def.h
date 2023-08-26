@@ -94,16 +94,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } }, // to rotate through all windows in a workspace including hidden ones
 	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      inplacerotate,  {.i = +1} }, // all 3 with jk do the same thing
-	{ MODKEY|ShiftMask,             XK_k,      inplacerotate,  {.i = -1} },
-	{ MODKEY|ShiftMask,             XK_h,      inplacerotate,  {.i = +2} },
-	{ MODKEY|ShiftMask,             XK_l,      inplacerotate,  {.i = -2} },
+    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ControlMask,           XK_j,      inplacerotate,  {.i = +1} }, // like vim
+	{ MODKEY|ControlMask,           XK_k,      inplacerotate,  {.i = -1} }, // gore dolu like vim
+	{ MODKEY|ControlMask,           XK_h,      inplacerotate,  {.i = +2} }, // rotates clockwise 
+	{ MODKEY|ControlMask,           XK_l,      inplacerotate,  {.i = -2} }, // rotates counter clockwise
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
