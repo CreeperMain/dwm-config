@@ -82,6 +82,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("sleep 1 && xset dpms force off") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("virt-viewer --connect qemu:///system") },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("firejail --noprofile --net=none obsidian") },
 //	{ MODKEY|ControlMask,           XK_e,      spawn,          SHCMD("setxkbmap us") }, //najdi nachin da rabotit so kirlichno e
 	{ MODKEY|ControlMask,           XK_0,      spawn,          SHCMD("setxkbmap us") },
 	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("setxkbmap mk") },
