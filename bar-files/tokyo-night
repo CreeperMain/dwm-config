@@ -1,0 +1,33 @@
+#!/bin/dash
+
+# colours
+
+red=#f7768e    #This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red
+orange=#ff9e64 #Number and Boolean constants, Language support constants
+yellow=#e0af68 #Function parameters, Regex character sets, Terminal Yellow
+green=#9ece6a #Strings, CSS class names
+tgreen=#73daca #Object literal keys, Markdown links, Terminal Green
+whitegreen=#b4f9f8 #Regex literal strings
+cyan=#2ac3de   #Language support functions, CSS HTML elements
+lblue=#7dcfff  #Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords
+blue=#7aa2f7   #Function names, CSS property names, Terminal Blue
+purple=#bb9af7 #Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta
+twhite=#c0caf5 #Variables, Class names, Terminal White
+white=#a9b1d6  #Editor Foreground
+lgrey=#9aa5ce  #Markdown Text, HTML Text
+baje=#cfc9c2   #Parameters inside functions (semantic highlighting only)
+grey=#565f89   #Comments
+tblack=#414868 #Terminal Black
+black1=#24283b #Editor Background (Storm)  
+black2=#1a1b26 #Editor Background (Night)
+
+#extra
+terminalb=#0f0f14
+#battery colors
+dggreen=#35A77C #everforest green
+gaqua=#8ec07c
+lggreen=#b8bb26 #lighter 2
+gyellow=#d79921
+lgorange=#d65d0e #lighter 1
+dgorange=#af3a03 #darker 2
+gred=#9d0006
