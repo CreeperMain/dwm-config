@@ -17,14 +17,14 @@ static const char *fonts[]          = {
 #include "fibonacci.c"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { white, black, gray2 },
-	[SchemeSel]  = { white, black2,  white  },
-	[SchemeHid]  = { gray3,  black, red  },
-	[SchemeStatus]  = { white, black,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { white, black2,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { gray3, black,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { white, black,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-    [SchemeInfoNorm]  = { white, black,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeNorm] = { white, black2, black1 },
+	[SchemeSel]  = { white, black1,  white  },
+	[SchemeHid]  = { tblack,  black2, red  },
+	[SchemeStatus]  = { white, black2,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { white, black1,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { tblack, black2,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { white, black2,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { white, black2,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -71,7 +71,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char dmenufont[] = "mononoki-Regular.otf:style:medium:size=12";
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", black2, "-sf", white, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
