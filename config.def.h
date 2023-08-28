@@ -10,6 +10,7 @@ static const unsigned int gappov    = 15;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int focusonwheel       = 0;
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 14;        /* vertical padding for statusbar */
 static const int vertpad            = 15;       /* vertical padding of bar */
