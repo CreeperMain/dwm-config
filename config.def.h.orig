@@ -14,6 +14,7 @@ static const char *fonts[]          = {
 	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
 #include "tokyonight.h"
+#include "fibonacci.c"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { white, black2, black1 },
@@ -51,6 +52,8 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "[@]",      spiral },
+ 	{ "[\\]",      dwindle },
 };
 
 /* key definitions */

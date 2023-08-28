@@ -14,7 +14,6 @@ static const char *fonts[]          = {
 	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
 #include "tokyonight.h"
-#include "fibonacci.c"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { white, black2, black1 },
@@ -47,15 +46,11 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
-#include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "HHH",      grid },
-	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
 };
 
 /* key definitions */
@@ -114,9 +109,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[5]} },
+//	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
+//	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4]} },
+//	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ControlMask,        	XK_f,      togglefullscr,  {0} }, //chagne all layouts to use control
