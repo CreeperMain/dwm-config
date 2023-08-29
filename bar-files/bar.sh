@@ -57,17 +57,16 @@ fi
 
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf "^c$terminalb^^b$lblue^ 󰖩 ^d^%s" "^c$lblue^^b$terminalb^ Connected " ;;
+	up) printf "^c$terminalb^^b$blue^ 󰖩 ^d^%s" "^c$blue^^b$terminalb^ Connected " ;;
 	down) printf "^c$terminalb^^b$red^ 󰖪 ^d^%s" "^c$red^^b$terminalb^ Disconnected " ;;
 	esac
 }
-#like wlan but make a module for charging and make it only show when smth is charging
+
 clock() {
-	printf "^c$black2^^b$blue^ 󱑆"
-	printf "^c$black2^^b$blue^ $(date '+%H:%M')"
-	printf "^c$black2^^b$blue^ 󰨲"
-	printf "^c$black2^^b$blue^ $(date "+%d/%m/%Y")"
-	printf "     "
+	printf "^c$black2^^b$whitegreen^ 󱑆 "
+	printf "^c$black2^^b$tgreen^ $(date '+%H:%M') "
+	printf "^c$black2^^b$whitegreen^ 󰨲 "
+	printf "^c$black2^^b$tgreen^ $(date "+%u/%d/%m/%y")    " #this is 21st century for u future ppl
 }
 
 audio() {
