@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Virt-viewer",     NULL,       "Virt-viewer",        1 << 8,         True,     -1 },
 	{ "Virt-viewer",  "virt-viewer",      "Virt-viewer",       1 << 8,       1,           -1 },
 };
 
@@ -148,14 +149,15 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_d,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_b,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[6]} },
+	{ MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY|Mod4Mask,              XK_b,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[7]} },
 	{ MODKEY|ShiftMask,             XK_g,      setlayout,      {.v = &layouts[8]} },
 	{ MODKEY|Mod4Mask,              XK_g,      setlayout,      {.v = &layouts[9]} },
-	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[10]} },
-	{ MODKEY|Mod4Mask,              XK_m,      setlayout,      {.v = &layouts[11]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[12]} },
+	{ MODKEY|ControlMask,           XK_g,      setlayout,      {.v = &layouts[10]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[11]} },
+	{ MODKEY|Mod4Mask,              XK_m,      setlayout,      {.v = &layouts[12]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[13]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ControlMask,        	XK_f,      togglefullscr,  {0} }, //chagne all layouts to use control
