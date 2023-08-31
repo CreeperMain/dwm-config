@@ -13,7 +13,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 14;        /* vertical padding for statusbar */
-static const int vertpad            = 15;       /* vertical padding of bar */
+static const int vertpad            = 12;       /* vertical padding of bar */
 static const int sidepad            = 15;       /* horizontal padding of bar */
 static const char *fonts[]          = {
 	"mononoki-Regular.otf:style:medium:size=12" ,
@@ -41,10 +41,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Audacity",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Virt-viewer",     NULL,       "Virt-viewer",        1 << 8,         True,     -1 },
-	{ "Virt-viewer",  "virt-viewer",      "Virt-viewer",       1 << 8,       1,           -1 },
+	{ "",  "virt-viewer",      "Virt-viewer",       1 << 8,       1,           -1 },
 };
 
 /* layout(s) */
@@ -101,6 +101,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("sleep 1 && xset dpms force off") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("virt-viewer --connect qemu:///system") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("firejail --noprofile --net=none obsidian") },
+	{ MODKEY,         			    XK_a,      spawn,          SHCMD("firejail --noprofile --net=none audacity") },
 //	{ MODKEY|ControlMask,           XK_e,      spawn,          SHCMD("setxkbmap us") }, //najdi nachin da rabotit so kirlichno e
 	{ MODKEY|ControlMask,           XK_0,      spawn,          SHCMD("setxkbmap us") },
 	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("setxkbmap mk") },
