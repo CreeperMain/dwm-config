@@ -42,9 +42,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Audacity",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Virt-viewer",     NULL,       "Virt-viewer",        1 << 8,         True,     -1 },
-	{ "",  "virt-viewer",      "Virt-viewer",       1 << 8,       1,           -1 },
+	{ "Virt-manager",     NULL,       NULL,       0,            1,           -1 },
+	{ "Viewnior",     NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
