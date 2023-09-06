@@ -109,6 +109,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_d,      spawn,          SHCMD("setxkbmap de") },
 	{ MODKEY|ControlMask,           XK_g,      spawn,          SHCMD("setxkbmap gr") },
 	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("setxkbmap hr") },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("flatpak run com.dec05eba.gpu_screen_recorder") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_l,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstackvis,  {.i = -1 } },
