@@ -7,4 +7,4 @@
 - [ ] reworking keybindings
 
 # Picture
-![[screenshot.png]]
+![this is what the desktop looks like](screenshot.png)
