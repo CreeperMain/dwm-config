@@ -5,3 +5,6 @@
 - [ ] adding a second bar maybe (either xfce panel so its like an app panel or adding it via dwm patches)
 - [ ] adding conky (for system information)
 - [ ] reworking keybindings
+
+# Picture
+![[screenshot.png]]
