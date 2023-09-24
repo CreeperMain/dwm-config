@@ -57,8 +57,8 @@ fi
 
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf "^c$terminalb^^b$blue^ 󰖩 ^d^%s" "^c$blue^^b$terminalb^ Connected " ;;
-	down) printf "^c$terminalb^^b$red^ 󰖪 ^d^%s" "^c$red^^b$terminalb^ Disconnected " ;;
+	up) printf "^c$theotherone^^b$blue^ 󰖩 ^d^%s" "^c$blue^^b$theotherone^ Connected " ;;
+	down) printf "^c$theotherone^^b$red^ 󰖪 ^d^%s" "^c$red^^b$theotherone^ Disconnected " ;;
 	esac
 }
 
@@ -78,14 +78,14 @@ charge() {
 get_charge="$(cat /sys/class/power_supply/BAT1/status)"
  if [ "$get_charge" = Charging ]
  then
-	 printf "^c$terminalb^^b$green^  " 
-   printf "^c$green^^b$terminalb^ Charging "
+	 printf "^c$theotherone^^b$green^  " 
+   printf "^c$green^^b$theotherone^ Charging "
 fi
 }
 
 kblayout() {
-	printf "^c$terminalb^^b$orange^ 󰌌 "
-	printf "^c$orange^^b$terminalb^ $(setxkbmap -query | awk '/layout:/ {print $2}') "
+	printf "^c$theotherone^^b$orange^ 󰌌 "
+	printf "^c$orange^^b$theotherone^ $(setxkbmap -query | awk '/layout:/ {print $2}') "
 }
 
 while true; do

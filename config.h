@@ -16,7 +16,7 @@ static const int vertpadbar         = 14;        /* vertical padding for statusb
 static const int vertpad            = 12;       /* vertical padding of bar */
 static const int sidepad            = 15;       /* horizontal padding of bar */
 static const char *fonts[]          = {
-	"mononoki-Regular.otf:style:medium:size=12" ,
+	"mononoki-Regular.otf:style:medium:size=12:antialias=true:autohint=true",
 	"JetBrainsMonoNerdFontMono-Regular.ttf:pixelsize=27:style=bold" 
 	};
 #include "tokyonight.h"
