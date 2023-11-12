@@ -44,6 +44,10 @@ static const Rule rules[] = {
 	{ "Audacity",     NULL,       NULL,       0,            1,           -1 },
 	{ "Virt-manager",     NULL,       NULL,       0,            1,           -1 },
 	{ "Viewnior",     NULL,       NULL,       0,            1,           -1 },
+	{ "gnome-chess",     NULL,       NULL,       0,            1,           -1 },
+	{ "xsnow",     NULL,       NULL,       0,            1,           -1 },
+	{ "vlc",     NULL,       NULL,       0,            1,           -1 },
+
 };
 
 /* layout(s) */
@@ -92,7 +96,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -vi") },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty -e tmux") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("steam") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("librewolf") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("vscodium") },
