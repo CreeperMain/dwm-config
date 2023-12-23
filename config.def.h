@@ -96,7 +96,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -vi") },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty -e tmux") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("steam") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("librewolf") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("vscodium") },
